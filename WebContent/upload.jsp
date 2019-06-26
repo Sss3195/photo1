@@ -5,12 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>文件上传实例 - 菜鸟教程</title>
+<title>图片上传</title>
 </head>
 <body>
-<h1>文件上传实例 - 菜鸟教程</h1>
+<h1>请上传您的图片</h1>
 <form method="post" action="UploadServlet" enctype="multipart/form-data">
-    选择一个文件:
+    选择第一个文件:
+    <input type="file" name="uploadFile" />
+    <br/><br/>
+    选择第二个文件:
+    <input type="file" name="uploadFile" />
+    <br/><br/>
+    选择第三个文件:
+    <input type="file" name="uploadFile" />
+    <br/><br/>
+    选择第四个文件:
     <input type="file" name="uploadFile" />
     <br/><br/>
     <input type="submit" value="上传" />
