@@ -13,13 +13,10 @@
     选择第一个文件:
     <input type="file" name="uploadFile" />
     <br/><br/>
-    选择第二个文件:
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    选择第三个文件:
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    选择第四个文件:
+    <input type="submit" value="上传" />
+</form>
+<form method="post" action="UploadServlet" enctype="multipart/form-data">
+    选择第一个文件:
     <input type="file" name="uploadFile" />
     <br/><br/>
     <input type="submit" value="上传" />

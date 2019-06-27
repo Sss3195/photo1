@@ -9,8 +9,16 @@ import com.drew.metadata.Tag;
 
 public class readphoto {
 	public static void main(String[] args) throws Exception, Exception{
-		File file = new File("E:\\3.jpg");
-		printImageTags(file);
+		String path="D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload";
+		count c=new count();
+		c.count1("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload");
+		File file1 = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload");
+		String[] filelist = file1.list();
+		for (int i = 0; i < filelist.length; i++) {
+			File file = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload\\"+i+".jpg");
+			printImageTags(file);
+			}
+		c.deletefile(path);
 	}
 	private static void printImageTags(File file) throws ImageProcessingException, Exception{  
 		Metadata metadata = ImageMetadataReader.readMetadata(file);
@@ -27,10 +35,8 @@ public class readphoto {
 //				}else 
 				if (tagName.equals("GPS Latitude")) {  
 					System.err.println("纬度 : "+pointToLatlong (desc));
-//                  System.err.println("纬度(度分秒格式) : "+pointToLatlong(desc));
 				} else if (tagName.equals("GPS Longitude")) {  
-					System.err.println("经度: "+pointToLatlong (desc));
-//                  System.err.println("经度(度分秒格式): "+pointToLatlong(desc));
+					System.err.println("经度: "+pointToLatlong (desc)); 
 				}
 			}
 		}
