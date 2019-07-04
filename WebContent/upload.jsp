@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,18 +8,20 @@
 <title>图片上传</title>
 </head>
 <body>
-<h1>请上传您的图片</h1>
-<form method="post" action="UploadServlet" enctype="multipart/form-data">
-    选择第一个文件:
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    <input type="submit" value="上传" />
-</form>
-<form method="post" action="UploadServlet" enctype="multipart/form-data">
-    选择第一个文件:
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    <input type="submit" value="上传" />
-</form>
+	<h1>请上传您的图片</h1>
+	<form method="post" action="UploadServlet"
+		enctype="multipart/form-data">
+		<dl>
+			<dt>选择第一个文件:</dt>
+			<dd>
+				<input type="file" name="uploadFile" />
+			</dd>
+			<dt>选择第二个文件:</dt>
+			<dd>
+				<input type="file" name="uploadFile" />
+			</dd><br/>
+			<input type="submit" value="上传" />
+		</dl>
+	</form>
 </body>
 </html>

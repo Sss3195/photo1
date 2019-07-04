@@ -28,7 +28,7 @@ public class UploadServlet extends HttpServlet {
     private static final String UPLOAD_DIRECTORY = "upload";
  
     // 上传配置
-    private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
+    private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 10; // 10MB
     private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
  
@@ -55,12 +55,12 @@ public class UploadServlet extends HttpServlet {
  
         ServletFileUpload upload = new ServletFileUpload(factory);
          
-        // 设置最大文件上传值
-        upload.setFileSizeMax(MAX_FILE_SIZE);
-         
-        // 设置最大请求值 (包含文件和表单数据)
-        upload.setSizeMax(MAX_REQUEST_SIZE);
-        
+//        // 设置最大文件上传值
+//        upload.setFileSizeMax(MAX_FILE_SIZE);
+//         
+//        // 设置最大请求值 (包含文件和表单数据)
+//        upload.setSizeMax(MAX_REQUEST_SIZE);
+//        
         // 中文处理
         upload.setHeaderEncoding("UTF-8"); 
 

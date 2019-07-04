@@ -18,7 +18,7 @@ public class readphoto {
 			File file = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload\\"+i+".jpg");
 			printImageTags(file);
 			}
-		c.deletefile(path);
+		//c.deletefile(path);
 	}
 	private static void printImageTags(File file) throws ImageProcessingException, Exception{  
 		Metadata metadata = ImageMetadataReader.readMetadata(file);
