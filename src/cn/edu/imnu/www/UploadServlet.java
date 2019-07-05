@@ -11,10 +11,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import cn.edu.imnu.text.count;
+import cn.edu.imnu.text.number;
+import cn.edu.imnu.text.readphoto;
  
 
 /**
@@ -35,6 +40,10 @@ public class UploadServlet extends HttpServlet {
     /**
      * 上传数据及保存文件
      */
+    public static String count;
+	protected void doGet(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+    }
     protected void doPost(HttpServletRequest request,
         HttpServletResponse response) throws ServletException, IOException {
         // 检测是否为多媒体上传
@@ -89,7 +98,7 @@ public class UploadServlet extends HttpServlet {
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         // 在控制台输出文件的上传路径
-                        System.out.println(filePath);
+//                        System.out.println(filePath);
                         // 保存文件到硬盘
                         item.write(storeFile);
                         request.setAttribute("message",
@@ -102,7 +111,10 @@ public class UploadServlet extends HttpServlet {
                     "错误信息: " + ex.getMessage());
         }
         // 跳转到 message.jsp
-//        getServletContext().getRequestDispatcher("/message.jsp").forward(
+//        request.getRequestDispatcher("/upload.jsp").forward(
 //                request, response);
+        count=request.getParameter("count");
+        response.sendRedirect("readServlet");
     }
+    
 }

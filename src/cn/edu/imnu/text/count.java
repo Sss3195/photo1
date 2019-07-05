@@ -22,22 +22,22 @@ public class count {
                             System.out.println("name=" + file.getName());
 
                     } else if (file.isDirectory()) {
-                            System.out.println("文件夹");
+//                            System.out.println("文件夹");
                             String[] filelist = file.list();
                             for (int i = 0; i < filelist.length; i++) {
                                     File readfile = new File(filepath + "\\" + filelist[i]);
                                     if (!readfile.isDirectory()) {
-                                            System.out.println("path=" + readfile.getPath());
+//                                            System.out.println("path=" + readfile.getPath());
 //                                            System.out.println("absolutepath="+ readfile.getAbsolutePath());
                                     	File oldname = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload\\"+readfile.getName());
-                                    	System.out.println(readfile.getName());
+//                                    	System.out.println(readfile.getName());
                                     	File newname = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload\\"+i+".jpg");
                                     	if(oldname.renameTo(newname)) {
-                                            System.out.println("已重命名");
+//                                            System.out.println("已重命名");
                                         } else {
                                             System.out.println("Error");
                                         }
-                                        System.out.println("name=" + readfile.getName());
+//                                        System.out.println("name=" + readfile.getName());
 
                                     } else if (readfile.isDirectory()) {
                                             count1(filepath + "\\" + filelist[i]);

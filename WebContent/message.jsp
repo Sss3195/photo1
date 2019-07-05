@@ -9,7 +9,9 @@
 </head>
 <body>
     <center>
-        <h2>${message}</h2>
+        <h2>图片提交成功</h2>
     </center>
+    <%String count=request.getParameter("count"); %>
+    <span>您一共上传了<%=count %>张照片</span>
 </body>
 </html>

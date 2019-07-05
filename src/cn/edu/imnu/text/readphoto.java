@@ -20,7 +20,7 @@ public class readphoto {
 			}
 		//c.deletefile(path);
 	}
-	private static void printImageTags(File file) throws ImageProcessingException, Exception{  
+	public static void printImageTags(File file) throws ImageProcessingException, Exception{  
 		Metadata metadata = ImageMetadataReader.readMetadata(file);
 		for (Directory directory : metadata.getDirectories()) { 
 			for (Tag tag : directory.getTags()) {
@@ -33,9 +33,12 @@ public class readphoto {
 //				} else if (tagName.equals("Date/Time Original")) {  
 //					System.out.println("拍摄时间: "+desc);
 //				}else 
+				number nu=new number();
 				if (tagName.equals("GPS Latitude")) {  
+					nu.setWD(pointToLatlong (desc));
 					System.err.println("纬度 : "+pointToLatlong (desc));
 				} else if (tagName.equals("GPS Longitude")) {  
+					nu.setJD(pointToLatlong (desc));
 					System.err.println("经度: "+pointToLatlong (desc)); 
 				}
 			}
