@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>文件上传结果</title>
+<meta charset="UTF-8">
+<title>上传成功</title>
 </head>
 <body>
-    <center>
-        <h2>图片提交成功</h2>
-    </center>
-    <%String count=request.getParameter("count"); %>
-    <span>您一共上传了<%=count %>张照片</span>
+<h2>图片上传成功</h2><br/>
+<form method="get" action="paintServlet">
+<input type="submit" value="生成轨迹"><br/>
+</form><br/>
 </body>
 </html>

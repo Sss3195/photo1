@@ -27,7 +27,7 @@ public class count {
                             for (int i = 0; i < filelist.length; i++) {
                                     File readfile = new File(filepath + "\\" + filelist[i]);
                                     if (!readfile.isDirectory()) {
-//                                            System.out.println("path=" + readfile.getPath());
+                                            System.out.println("path=" + readfile.getPath());
 //                                            System.out.println("absolutepath="+ readfile.getAbsolutePath());
                                     	File oldname = new File("D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload\\"+readfile.getName());
 //                                    	System.out.println(readfile.getName());

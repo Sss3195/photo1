@@ -2,6 +2,11 @@ package cn.edu.imnu.www;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +44,7 @@ public class readServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    number nu=new number();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String path="D:\\eclipse\\新建文件夹\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\photo\\upload";
@@ -55,7 +61,7 @@ public class readServlet extends HttpServlet {
 		Metadata metadata;
 		try {
 			metadata = ImageMetadataReader.readMetadata(file);
-			number nu=new number();
+			
 			for (Directory directory : metadata.getDirectories()) { 
 				for (Tag tag : directory.getTags()) {
 					String tagName = tag.getTagName();  //标签名
@@ -68,11 +74,11 @@ public class readServlet extends HttpServlet {
 //						System.out.println("拍摄时间: "+desc);
 //					}
 					if (tagName.equals("GPS Latitude")) {  
-						nu.WD=pointToLatlong1 (desc);
-						System.out.println("纬度 : "+pointToLatlong1 (desc));
+						nu.setWD(pointToLatlong1 (desc));;
+//						System.out.println("纬度 : "+pointToLatlong1 (desc));
 					} else if (tagName.equals("GPS Longitude")) {  
-						nu.JD=pointToLatlong1 (desc);
-						System.out.println("经度: "+pointToLatlong1 (desc)); 
+						nu.setJD(pointToLatlong1 (desc));
+//						System.out.println("经度: "+pointToLatlong1 (desc)); 
 					}
 				}
 			}
@@ -80,20 +86,26 @@ public class readServlet extends HttpServlet {
 			System.out.println(data);
 			double d=Double.valueOf(data);
 			if(d==1) {
-				x1=(int)(Double.valueOf(nu.WD)*1000000)%100;
-				y1=(int)(Double.valueOf(nu.JD)*1000000)%100;
+				y1=(int)(Double.valueOf(nu.WD)*1000000)%100+300;
+				x1=(int)(Double.valueOf(nu.JD)*1000000)%100+500;
 				System.out.println(x1);
 				System.out.println(y1);
 			}
 			if(d==2) {
-				x2=(int)(Double.valueOf(nu.WD)*1000000)%100;
-				y2=(int)(Double.valueOf(nu.JD)*1000000)%100;
+				y2=(int)(Double.valueOf(nu.WD)*1000000)%100+300;
+				x2=(int)(Double.valueOf(nu.JD)*1000000)%100+500;
 				System.out.println(x2);
 				System.out.println(y2);
 			}
 			if(d==3) {
-				x3=(int)(Double.valueOf(nu.WD)*1000000)%100;
-				y3=(int)(Double.valueOf(nu.JD)*1000000)%100;
+				y3=(int)(Double.valueOf(nu.WD)*1000000)%100+300;
+				x3=(int)(Double.valueOf(nu.JD)*1000000)%100+500;
+				System.out.println(x3);
+				System.out.println(y3);
+			}
+			if(d==4) {
+				y4=(int)(Double.valueOf(nu.WD)*1000000)%100+300;
+				x4=(int)(Double.valueOf(nu.JD)*1000000)%100+500;
 				System.out.println(x3);
 				System.out.println(y3);
 			}
@@ -104,6 +116,7 @@ public class readServlet extends HttpServlet {
 		c.deletefile(path);
 		response.sendRedirect("upload.jsp");
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

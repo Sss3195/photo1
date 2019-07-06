@@ -14,9 +14,9 @@
 			{
 			    application.setAttribute("count",new Integer(0));   
 			}   
-		Integer count=(Integer)application.getAttribute("count");      
+		Integer count=(Integer)application.getAttribute("count"); 
 		application.setAttribute("count",new Integer(count.intValue()+1));   
-		count=(Integer)application.getAttribute("count");   
+		count=(Integer)application.getAttribute("count");
 		%>
 	<form method="post" action="UploadServlet?count=<%=count %>"
 		enctype="multipart/form-data">
